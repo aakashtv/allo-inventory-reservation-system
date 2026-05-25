@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { apiResponse, handleApiError } from "@/server/utils/ApiResponse";
 import { ReservationNotFoundError } from "@/server/errors/AppErrors";
+export const dynamic = "force-dynamic";
 
 export async function GET(
   req: NextRequest,
