@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { reservationService } from "@/server/services/ReservationService";
 import { apiResponse, handleApiError } from "@/server/utils/ApiResponse";
+export const dynamic = "force-dynamic";
 
 export async function POST(
   req: NextRequest,

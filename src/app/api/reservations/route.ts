@@ -3,6 +3,7 @@ import { reservationService } from "@/server/services/ReservationService";
 import { apiResponse, handleApiError } from "@/server/utils/ApiResponse";
 import { CreateReservationSchema } from "@/server/validators/ReservationValidators";
 import { checkIdempotency, saveIdempotencyKey } from "@/lib/idempotency";
+export const dynamic = "force-dynamic";
 
 export async function POST(req: NextRequest) {
   try {
