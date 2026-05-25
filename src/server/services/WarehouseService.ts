@@ -2,6 +2,9 @@ import { prisma } from "@/lib/prisma";
 
 export class WarehouseService {
   async getWarehouses() {
+    if (!process.env.DATABASE_URL) {
+      return [];
+    }
     return await prisma.warehouse.findMany({
       include: {
         inventories: {

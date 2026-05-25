@@ -2,6 +2,11 @@ import { prisma } from "@/lib/prisma";
 
 export class ProductService {
   async getProducts() {
+    if (!process.env.DATABASE_URL) {
+      console.warn("Bypassing DB query during build: DATABASE_URL is missing.");
+      return [];
+    }
+
     const products = await prisma.product.findMany({
       include: {
         inventories: {

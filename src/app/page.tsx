@@ -2,6 +2,8 @@ import { DashboardShell } from "@/components/layout/DashboardShell";
 import { ArrowRight, Box, Activity } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <DashboardShell>
